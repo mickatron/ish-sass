@@ -1,0 +1,17 @@
+{
+  "name": "ish-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ish.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Hargreaves",
+  "license": "ISC",
+  "devDependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "sassdoc": "^2.2.2"
+  }
+}

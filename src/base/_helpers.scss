@@ -1,0 +1,93 @@
+
+/*
+ * Text
+ */
+
+.t-uppercase {
+	text-transform: uppercase;
+}
+
+.t-capitalize {
+	text-transform: capitalize; 
+}
+
+.t-lowercase {
+	text-transform: lowercase; 
+}
+
+.t-center {
+  text-align: center;
+}
+
+/* 
+ * Text Size Classes
+ */
+.t-giga {
+	@include font-size(giga);
+}
+.t-mega {
+	@include font-size(mega);
+}
+.t-kilo {
+	@include font-size(kilo);
+}
+
+h1,.t-alpha {
+	@include font-size(alpha);
+}
+h2,.t-beta {
+	@include font-size(beta);
+}
+h3,.t-gamma {
+	@include font-size(gamma);
+}
+p,h4,.t-delta {
+	@include font-size(delta);
+}
+h5, 
+.t-epsilon,
+code, kbd, pre, samp {
+	@include font-size(epsilon);
+}
+h6, .t-zeta {
+	@include font-size(zeta);
+}
+
+.t-milli {
+	@include font-size(milli);
+}
+.t-micro {
+	@include font-size(micro);
+}
+
+/*
+ * Utility
+ */
+.u-hide {
+  display: none;
+}
+
+.u-show {
+  display: block;
+}
+
+.u-accessible-hide {
+	@include accessible-hide;
+}
+
+.u-remove-list-style {
+	@include remove-list-style;
+}
+
+.u-inline-menu {
+  @include menu-list(inline);
+  margin-bottom: 1rem; //TODO : Review this for framework
+  
+	li{
+  		margin-right: 1rem;
+
+	    &:last-child{
+	    	margin-right:0;
+	    }
+	}
+}

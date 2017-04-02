@@ -1,0 +1,453 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ish-sass - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Ish-sass - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Ish-sass - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="colour, shape &amp; effects"><a href="#colour, shape &amp; effects">colour, shape &amp; effects</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="colour, shape &amp; effects-mixin"><a href="#colour, shape &amp; effects-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colour, shape &amp; effects" data-name="triangle" data-type="mixin"><a href="#colour, shape &amp; effects-mixin-triangle">triangle</a></li><li class="sidebar__item sassdoc__item" data-group="colour, shape &amp; effects" data-name="linear-gradient" data-type="mixin"><a href="#colour, shape &amp; effects-mixin-linear-gradient">linear-gradient</a></li><li class="sidebar__item sassdoc__item" data-group="colour, shape &amp; effects" data-name="radial-gradient" data-type="mixin"><a href="#colour, shape &amp; effects-mixin-radial-gradient">radial-gradient</a></li><li class="sidebar__item sassdoc__item" data-group="colour, shape &amp; effects" data-name="transition" data-type="mixin"><a href="#colour, shape &amp; effects-mixin-transition">transition</a></li><li class="sidebar__item sassdoc__item" data-group="colour, shape &amp; effects" data-name="bg-dotted" data-type="mixin"><a href="#colour, shape &amp; effects-mixin-bg-dotted">bg-dotted</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="css icons"><a href="#css icons">css icons</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="css icons-mixin"><a href="#css icons-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="css icons" data-name="i-chevron" data-type="mixin"><a href="#css icons-mixin-i-chevron">i-chevron</a></li><li class="sidebar__item sassdoc__item" data-group="css icons" data-name="i-menu" data-type="mixin"><a href="#css icons-mixin-i-menu">i-menu</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="grid"><a href="#grid">grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-variable"><a href="#grid-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="grid" data-name="base-grid-gutter" data-type="variable"><a href="#grid-variable-base-grid-gutter">base-grid-gutter</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-mixin"><a href="#grid-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="grid" data-name="grid-column" data-type="mixin"><a href="#grid-mixin-grid-column">grid-column</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="responsive"><a href="#responsive">responsive</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="responsive-mixin"><a href="#responsive-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="responsive" data-name="responsive-gutters" data-type="mixin"><a href="#responsive-mixin-responsive-gutters">responsive-gutters</a></li><li class="sidebar__item sassdoc__item" data-group="responsive" data-name="font-size" data-type="mixin"><a href="#responsive-mixin-font-size">font-size</a></li><li class="sidebar__item sassdoc__item" data-group="responsive" data-name="retina" data-type="mixin"><a href="#responsive-mixin-retina">retina</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="responsive-variable"><a href="#responsive-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="responsive" data-name="responsive-settings" data-type="variable"><a href="#responsive-variable-responsive-settings">responsive-settings</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="rhythm"><a href="#rhythm">rhythm</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="rhythm-variable"><a href="#rhythm-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="rhythm" data-name="scale-labels" data-type="variable"><a href="#rhythm-variable-scale-labels">scale-labels</a></li><li class="sidebar__item sassdoc__item" data-group="rhythm" data-name="base-scale-index" data-type="variable"><a href="#rhythm-variable-base-scale-index">base-scale-index</a></li><li class="sidebar__item sassdoc__item" data-group="rhythm" data-name="scales" data-type="variable"><a href="#rhythm-variable-scales">scales</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="rhythm-function"><a href="#rhythm-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="rhythm" data-name="rem-rhythm" data-type="function"><a href="#rhythm-function-rem-rhythm">rem-rhythm</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="pow" data-type="function"><a href="#undefined-function-pow">pow</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="reverseList" data-type="function"><a href="#undefined-function-reverseList">reverseList</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="strip-unit" data-type="function"><a href="#undefined-function-strip-unit">strip-unit</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="px-to-rem" data-type="function"><a href="#undefined-function-px-to-rem">px-to-rem</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="rem-to-px" data-type="function"><a href="#undefined-function-rem-to-px">rem-to-px</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="getColor" data-type="function"><a href="#undefined-function-getColor">getColor</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="convert-unit" data-type="function"><a href="#undefined-function-convert-unit">convert-unit</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="opposite-direction" data-type="function"><a href="#undefined-function-opposite-direction">opposite-direction</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="pos" data-type="mixin"><a href="#undefined-mixin-pos">pos</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="pos-center" data-type="mixin"><a href="#undefined-mixin-pos-center">pos-center</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="pos-v-center" data-type="mixin"><a href="#undefined-mixin-pos-v-center">pos-v-center</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="pos-h-center" data-type="mixin"><a href="#undefined-mixin-pos-h-center">pos-h-center</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="remove-list-style" data-type="mixin"><a href="#undefined-mixin-remove-list-style">remove-list-style</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="menu-list" data-type="mixin"><a href="#undefined-mixin-menu-list">menu-list</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="truncate" data-type="mixin"><a href="#undefined-mixin-truncate">truncate</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="accessible-hide" data-type="mixin"><a href="#undefined-mixin-accessible-hide">accessible-hide</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="colour, shape &amp; effects"><div class="container">colour, shape &amp; effects</div></h1><section class="main__sub-section" id="colour, shape &amp; effects-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="colour, shape &amp; effects-mixin-triangle"><h3 class="item__heading"><a class="item__name" href="#mixin-triangle">triangle</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin triangle($direction, $color: currentcolor, $size: 1em) { 
+  @if not index(top right bottom left, $direction) {
+    @error &quot;Direction must be either `top`, `right`, `bottom` or `left`.&quot;;
+  }
+
+  width: 0;
+  height: 0;
+  content: &#39;&#39;;
+  z-index: 2;
+  border-#{opposite-direction($direction)}: ($width * 1.5) solid $color;
+  
+  $perpendicular-borders: $height solid transparent;
+  
+  @if $direction == top or $direction == bottom {
+    border-left:   $perpendicular-borders;
+    border-right:  $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top:    $perpendicular-borders;
+  }
+ }" data-collapsed="@mixin triangle($direction, $color: currentcolor, $size: 1em) { ... }"><code>@mixin triangle($direction, $color: currentcolor, $size: 1em) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Triangle helper mixin</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>Triangle direction, either <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code></p></td><td data-label="type"><code>Direction</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Triangle color</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>currentcolor</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Triangle size</p></td><td data-label="type"><code>Length</code></td><td data-label="default"><code>1em</code></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Direction must be either <code>top</code>, <code>right</code>, <code>bottom</code> or <code>left</code>.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-opposite-direction"><code>opposite-direction</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="colour, shape &amp; effects-mixin-linear-gradient"><h3 class="item__heading"><a class="item__name" href="#mixin-linear-gradient">linear-gradient</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin linear-gradient($direction, $colors...) { 
+  
+    $w3c: &#39;&#39;;
+
+    @if type-of($direction) == number and $direction &lt; 0 {
+      $w3c: 180 + $direction;
+    } @else {
+      $w3c: $direction;
+    }
+
+    @if type-of($direction) != number {
+      $direction: _fix-direction($direction);
+    }
+
+    background-image:  -webkit-linear-gradient($direction, $colors);
+    background-image:          linear-gradient($w3c, $colors);
+ }" data-collapsed="@mixin linear-gradient($direction, $colors...) { ... }"><code>@mixin linear-gradient($direction, $colors...) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Creates a linear gradient.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>The direction of the gradient in degrees.</p></td><td data-label="type"><code>Integer</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$colors...</code></th><td data-label="desc"><p>A series of colors to render along the gradient.</p></td><td data-label="type"><code>Rgb</code> or <code>Rgba</code> or <code>Hex...</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="colour, shape &amp; effects-mixin-radial-gradient"><h3 class="item__heading"><a class="item__name" href="#mixin-radial-gradient">radial-gradient</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin radial-gradient($sizeShapePos, $colors...) { 
+    
+    $posSizeShape: ();
+    $atIndex: false;
+    
+    // reordering for older browsers
+    @if length($sizeShapePos) &gt; 1 {
+      $atIndex: index($sizeShapePos, &#39;at&#39;);
+      @if $atIndex == null {
+        $atIndex: false;
+      }
+    }   
+    @if $atIndex != false {
+      @for $i from ($atIndex + 1) through length($sizeShapePos) {
+        $posSizeShape: append($posSizeShape, nth($sizeShapePos, $i));
+      }
+      $posSizeShape: append($posSizeShape, unquote(&#39;,&#39;));
+      @for $i from 1 through ($atIndex - 1) {
+        $posSizeShape: append($posSizeShape, nth($sizeShapePos, $i));
+      }
+    } @else {
+      $posSizeShape: append($posSizeShape, $sizeShapePos);
+    }
+
+    background-image:  -webkit-radial-gradient($posSizeShape, $colors);
+    background-image:          radial-gradient($sizeShapePos, $colors);
+ }" data-collapsed="@mixin radial-gradient($sizeShapePos, $colors...) { ... }"><code>@mixin radial-gradient($sizeShapePos, $colors...) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Creates a radial gradient.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$sizeShapePos</code></th><td data-label="desc"><p>The direction of the gradient in degrees.</p></td><td data-label="type"><code>Integer</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$colors...</code></th><td data-label="desc"><p>A series of colors to render along the gradient.</p></td><td data-label="type"><code>Rgb</code> or <code>Rgba</code> or <code>Hex...</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="colour, shape &amp; effects-mixin-transition"><h3 class="item__heading"><a class="item__name" href="#mixin-transition">transition</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin transition($duration) { 
+  transition:($duration / 2) ease-out;
+
+  &amp;:hover {
+    transition:$duration ease-in;
+  }
+
+  &amp;:active {
+    transition-duration:0ms;
+  }
+ }" data-collapsed="@mixin transition($duration) { ... }"><code>@mixin transition($duration) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A default transition style including hover and active psuedo elements.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$duration</code></th><td data-label="desc"><p>The length of the animation on hover, on blur the transition runs half of the given duration.</p></td><td data-label="type"><code>[type]</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="colour, shape &amp; effects-mixin-bg-dotted"><h3 class="item__heading"><a class="item__name" href="#mixin-bg-dotted">bg-dotted</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bg-dotted() { 
+  // CSS dotted background
+    background-image:
+     linear-gradient(45deg, rgba(255,255,255,0.05) 5%, transparent 5%), 
+      linear-gradient(-45deg, rgba(255,255,255,0.05) 5%, transparent 5%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+    background-size:4px 4px;
+    background-position:100px 100px, 250px 0, 250px -250px, 0px 250px;
+ }" data-collapsed="@mixin bg-dotted() { ... }"><code>@mixin bg-dotted() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Creates a dotted background fill</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="css icons"><div class="container">css icons</div></h1><section class="main__sub-section" id="css icons-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="css icons-mixin-i-chevron"><h3 class="item__heading"><a class="item__name" href="#mixin-i-chevron">i-chevron</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin i-chevron() { 
+
+	&amp;:before {
+		border-style: solid;
+		border-width: $borderWidth $borderWidth 0 0;
+		border-color: $color;
+		content: &#39;&#39;;
+		display: inline-block;
+		height: $size;
+		position: relative;
+		top: 0.15em;
+		transform: rotate($rotate);
+		vertical-align: top;
+		width: $size;
+	}
+ }" data-collapsed="@mixin i-chevron() { ... }"><code>@mixin i-chevron() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Basic Chevron Mixin. icon is create by putting borders on two sides of a square HTML element. This has limited animation capabilities. Needs re-factoring.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="css icons-mixin-i-menu"><h3 class="item__heading"><a class="item__name" href="#mixin-i-menu">i-menu</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin i-menu() { 
+	width: $width;
+	height: $height;
+	position: relative;
+	display: inline-block;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
+
+	span {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: $color;
+		border-radius: 6px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+
+		&amp;:nth-child(1) {
+			top: 0px;
+			transform-origin: left center;
+		}
+
+		&amp;:nth-child(2) {
+			@include pos-v-center();
+			transform-origin: left center;
+		}
+
+		&amp;:nth-child(3) {
+			bottom: 0;
+			transform-origin: left center;
+		}
+	}
+
+	&amp;[data-open=&quot;true&quot;] {
+		span:nth-child(1) {
+			transform: rotate(45deg);
+			top: -3px;
+			left: 4px;
+		}
+
+		span:nth-child(2) {
+			width: 0%;
+			opacity: 0;
+		}
+
+		span:nth-child(3) {
+			transform: rotate(-45deg);
+			top: $height;
+			left: 4px;
+		}
+	}
+ }" data-collapsed="@mixin i-menu() { ... }"><code>@mixin i-menu() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Burger Menu Icon Mixin Can be animated Could be improved with :before and :after</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-pos-v-center"><code>pos-v-center</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="grid"><div class="container">grid</div></h1><section class="main__sub-section" id="grid-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="grid-variable-base-grid-gutter"><h3 class="item__heading"><a class="item__name" href="#variable-base-grid-gutter">base-grid-gutter</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$base-grid-gutter: 3%;</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section><section class="main__sub-section" id="grid-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="grid-mixin-grid-column"><h3 class="item__heading"><a class="item__name" href="#mixin-grid-column">grid-column</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid-column($width, $gutter:$base-grid-gutter, $cycle:0) { 
+  $colWidth: (100% * $width);
+  $numOfCols: 100% / $colWidth;
+  $gutterWidth:  ($gutter * ($numOfCols - 1)) / $numOfCols;
+
+  @if $cycle != 0 {
+    &amp;:nth-child(#{$cycle}n){
+      margin-right:0;
+    }
+    &amp;:nth-child(#{$cycle}n+1){
+      margin-left:0;
+    }
+  }
+  width: $colWidth - $gutterWidth;
+ }" data-collapsed="@mixin grid-column($width, $gutter:$base-grid-gutter, $cycle:0) { ... }"><code>@mixin grid-column($width, $gutter:$base-grid-gutter, $cycle:0) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Calculates style attributes for a grid column.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>The width of the column in fraction format</p></td><td data-label="type"><code>Fraction</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter:$base-grid-gutter</code></th><td data-label="desc"><p>Columns gutter size</p></td><td data-label="type"><code>Percentage</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$cycle:0</code></th><td data-label="desc"><p>Break the row after n columns</p></td><td data-label="type"><code>Integer</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="responsive"><div class="container">responsive</div></h1><section class="main__sub-section" id="responsive-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="responsive-mixin-responsive-gutters"><h3 class="item__heading"><a class="item__name" href="#mixin-responsive-gutters">responsive-gutters</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin responsive-gutters($type:gutter, $map:$responsive-settings) { 
+  @each $key, $value in $map {
+    $bp-value: map-get(map-get($map, $key), breakpoint);
+  	$gutterValue :map-get(map-get($map, $key), $type);
+
+    @include breakpoint($bp-value) {
+      @if nth($list, 1 ) { margin-top: $gutterValue; }
+      @if nth($list, 2 ) { margin-right: $gutterValue; }
+      @if nth($list, 3 ) { margin-bottom: $gutterValue; }
+      @if nth($list, 4 ) { margin-left: $gutterValue;}
+    }
+  }
+ }" data-collapsed="@mixin responsive-gutters($type:gutter, $map:$responsive-settings) { ... }"><code>@mixin responsive-gutters($type:gutter, $map:$responsive-settings) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Creates responsively styled gutters according to the</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$type:gutter</code></th><td data-label="desc"><p>Defaults to &#39;gutter&#39; property. This property is found on the $map parmameter and may be any other valid property on that map which requires responsive gutters.</p></td><td data-label="type"><code>Map value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$map:$responsive-settings</code></th><td data-label="desc"><p>A map of site settings.</p></td><td data-label="type"><code>Map</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="responsive-mixin-font-size"><h3 class="item__heading"><a class="item__name" href="#mixin-font-size">font-size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-size($size: description, $map:$responsive-settings) { 
+  $scaleValue: index($scale-labels, $size)-$base-scale-index;
+  //$base-size:&#39;&#39;;
+  @each $key, $value in $map {
+    $bp-value: map-get($value, breakpoint);
+    /*$this-base-size : map-get($value, base-size);
+    @if $this-base-size {
+      $base-size: $this-base-size;
+    }*/
+    @include breakpoint($bp-value) {
+      //@debug $scaleValue;
+      $size: rem-rhythm( $scaleValue, $key, $map);
+      @if $size != &#39;&#39; {
+        font-size: $size;
+      }
+    }
+  }
+ }" data-collapsed="@mixin font-size($size: description, $map:$responsive-settings) { ... }"><code>@mixin font-size($size: description, $map:$responsive-settings) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Sets the font size accoring to the modular scale settings and responsive settings of the site.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>[type]</code></td><td data-label="default"><code>description</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$map:$responsive-settings</code></th><td data-label="desc"><p>A map of site settings.</p></td><td data-label="type"><code>[type]</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#rhythm-function-rem-rhythm"><code>rem-rhythm</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#rhythm-variable-scale-labels"><code>scale-labels</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#rhythm-variable-base-scale-index"><code>base-scale-index</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="responsive-mixin-retina"><h3 class="item__heading"><a class="item__name" href="#mixin-retina">retina</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin retina() { 
+  @media print,
+     (-webkit-min-device-pixel-ratio:1.25),
+      (-o-min-device-pixel-ratio:5/4),
+     (min-resolution:120dpi){
+    @content;
+  }
+ }" data-collapsed="@mixin retina() { ... }"><code>@mixin retina() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Target retina devices.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section><section class="main__sub-section" id="responsive-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="responsive-variable-responsive-settings"><h3 class="item__heading"><a class="item__name" href="#variable-responsive-settings">responsive-settings</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$responsive-settings: (
+	base: (
+		breakpoint: 0px,
+	 	width: 100%,
+		gutter: 5%,
+		//grid-gutter: 3%, // TODO: not working or implemented
+		base-size: map-get($base, font-size),
+    	line-height: map-get($base, line-height),
+    	ratio: map-get($scales, minorThird),
+    	header-height: 56px
+	),
+	mobile: (
+		breakpoint: $mobile-start,
+		//width: 100%,
+		gutter: 10px,
+	    base-size: 16px,
+	   	line-height: 1.3,
+	    ratio: map-get($scales, minorThird),
+    	header-height: 56px
+	), 
+	tablet: (
+		breakpoint: $tablet-start,
+		//width: 100%,
+		gutter: 5%,
+		base-size: 18px,
+	    base-line-height: 1.7,
+	    ratio: map-get($scales, fourth),
+    	header-height: 100vh
+	),
+	desktop: (
+		breakpoint: $desktop-start,
+		width: 1440px,
+		//gutter: 15%,    
+    	header-height: 100vh,
+    	ratio: map-get($scales, fourth),
+	),
+	desktopLarge: (
+		breakpoint:$desktop-high-res-start,
+		base-size: 20px,
+		grid-gutter: 5%,
+    	ratio: map-get($scales, fourth),
+	),
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Default responsive $responsive-settings as used in responsive mixins such as font-size and responsive-gutters.</p></div></section></section></section><section class="main__section"><h1 class="main__heading" id="rhythm"><div class="container">rhythm</div></h1><section class="main__sub-section" id="rhythm-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="rhythm-variable-scale-labels"><h3 class="item__heading"><a class="item__name" href="#variable-scale-labels">scale-labels</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$scale-labels: (micro, milli, zeta, epsilon, delta, gamma, beta, alpha, kilo, mega, giga);</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#responsive-mixin-font-size"><code>font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="rhythm-variable-base-scale-index"><h3 class="item__heading"><a class="item__name" href="#variable-base-scale-index">base-scale-index</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$base-scale-index: index($scale-labels, delta);</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#responsive-mixin-font-size"><code>font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="rhythm-variable-scales"><h3 class="item__heading"><a class="item__name" href="#variable-scales">scales</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$scales: (
+	minorSecond: 1.067,
+	majorSecond: 1.125,
+	minorThird: 1.2,
+	majorThird: 1.25,
+	fourth: 1.333,
+	augmentedFourth: 1.414,
+	fifth: 1.5,
+	minorSixth: 1.6,
+	majorSixth: 1.667,
+	minorSeventh: 1.778,
+	golden: 1.618,
+	octave: 2, // exponential
+	majorTenth: 2.5,
+	majorEleventh: 2.667,
+	majorTwelfth: 3,
+	doubleOctave: 4
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Rythmic scale ratios.</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section><section class="main__sub-section" id="rhythm-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="rhythm-function-rem-rhythm"><h3 class="item__heading"><a class="item__name" href="#function-rem-rhythm">rem-rhythm</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rem-rhythm($scale-value: description, $size-label: description, $scale-list: description) { 
+	$scale: map-get(map-get($scale-list, $size-label), ratio);
+	$fs:0;
+	// font-size calculation
+	@if $scale-value &lt; 0 {
+		// low scale
+		$fs: ms-low-scale($scale, $scale-value, $base-size); 
+	}  
+	@else { 
+		// high scale 
+		$fs: ms-high-scale($scale, $scale-value, $base-size); 
+	}
+
+	@if $pxOrRem == px {
+		@return $fs;
+	} 
+	@else if  $pxOrRem == rem {
+		@return px-to-rem($fs, $base-size);
+
+	}
+ }" data-collapsed="@function rem-rhythm($scale-value: description, $size-label: description, $scale-list: description) { ... }"><code>@function rem-rhythm($scale-value: description, $size-label: description, $scale-list: description) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Calculates modular rythmic values and returns them as rem values</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale-value</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>[type]</code></td><td data-label="default"><code>description</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$size-label</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>[type]</code></td><td data-label="default"><code>description</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale-list</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>[type]</code></td><td data-label="default"><code>description</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Rem</code></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-px-to-rem"><code>px-to-rem</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#responsive-mixin-font-size"><code>font-size</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-pow"><h3 class="item__heading"><a class="item__name" href="#function-pow">pow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function pow($number, $exponent) { 
+  $value: 1;
+  @if $exponent &gt; 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+  @return $value;
+ }" data-collapsed="@function pow($number, $exponent) { ... }"><code>@function pow($number, $exponent) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Calculate the power of.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>The base number value</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$exponent</code></th><td data-label="desc"><p>The exponent value</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Result of Snumber to the power of the $exponent</p></div></section><section class="main__item container item" id="undefined-function-reverseList"><h3 class="item__heading"><a class="item__name" href="#function-reverseList">reverseList</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function reverseList($list, $recursive) { 
+   $result: ();
+
+   @for $i from length($list)*-1 through -1 {
+      @if type-of(nth($list, abs($i))) == list and $recursive {
+        $result: append($result, reverseList(nth($list, abs($i)), $recursive));      
+      }
+      @else {
+        $result: append($result, nth($list, abs($i)));
+      }
+   }
+
+   @return $result;
+ }" data-collapsed="@function reverseList($list, $recursive) { ... }"><code>@function reverseList($list, $recursive) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Reverse a SASS list.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>The list to reverse</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$recursive</code></th><td data-label="desc"><p>Recursively reverse child lists. Default false.</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>A reversed list.</p></div></section><section class="main__item container item" id="undefined-function-strip-unit"><h3 class="item__heading"><a class="item__name" href="#function-strip-unit">strip-unit</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function strip-unit($number) { 
+  @if type-of($number) == &#39;number&#39; and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+ }" data-collapsed="@function strip-unit($number) { ... }"><code>@function strip-unit($number) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Remove the unit of a length</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>Number to remove unit from</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Unitless number</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem-to-px"><code>rem-to-px</code></a></li></ul></section><section class="main__item container item" id="undefined-function-px-to-rem"><h3 class="item__heading"><a class="item__name" href="#function-px-to-rem">px-to-rem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function px-to-rem($number) { 
+	@return 0rem + $size / $base-size ;
+ }" data-collapsed="@function px-to-rem($number) { ... }"><code>@function px-to-rem($number) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert a px unit to a rem unit</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>Value to convert</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Unit in rem&#39;s</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#rhythm-function-rem-rhythm"><code>rem-rhythm</code></a></li></ul></section><section class="main__item container item" id="undefined-function-rem-to-px"><h3 class="item__heading"><a class="item__name" href="#function-rem-to-px">rem-to-px</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rem-to-px($number) { 
+  @return strip-unit($size) * $base-size;
+ }" data-collapsed="@function rem-to-px($number) { ... }"><code>@function rem-to-px($number) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert a rem unit to a px unit</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>Value to convert</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>Unit in px&#39;s</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-strip-unit"><code>strip-unit</code></a></li></ul></section><section class="main__item container item" id="undefined-function-getColor"><h3 class="item__heading"><a class="item__name" href="#function-getColor">getColor</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function getColor($list, $recursive) { 
+
+  @if $color == null {
+    $color: $palette;
+    $palette : base;
+  }
+  $color-value: map-get(map-get($color-palette, $palette), $color);
+  //apply modifiers
+  @if $modify == rgba {
+    $color-value: rgba($color-value, $modify-value);
+  }
+  @if $modify == light {
+    $color-value: lighten($color-value, $modify-value);
+  }
+  @if $modify == dark {
+    $color-value: darken($color-value, $modify-value);
+  } 
+
+  @return $color-value;
+ }" data-collapsed="@function getColor($list, $recursive) { ... }"><code>@function getColor($list, $recursive) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>retrieve color from $color-palette map ie. <code>color(base, primary)</code> Reverse a SASS list.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list</code></th><td data-label="desc"><p>The list to reverse</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$recursive</code></th><td data-label="desc"><p>Recursively reverse child lists. Default false.</p></td><td data-label="type"><code>Boolean</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>A reversed list.</p></div></section><section class="main__item container item" id="undefined-function-convert-unit"><h3 class="item__heading"><a class="item__name" href="#function-convert-unit">convert-unit</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function convert-unit($value, $unit) { 
+  $units: (
+    &#39;px&#39;: 0px,
+    &#39;cm&#39;: 0cm,
+    &#39;mm&#39;: 0mm,
+    &#39;%&#39;: 0%,
+    &#39;ch&#39;: 0ch,
+    &#39;in&#39;: 0in,
+    &#39;em&#39;: 0em,
+    &#39;rem&#39;: 0rem,
+    &#39;pt&#39;: 0pt,
+    &#39;pc&#39;: 0pc,
+    &#39;ex&#39;: 0ex,
+    &#39;vw&#39;: 0vw,
+    &#39;vh&#39;: 0vh,
+    &#39;vmin&#39;: 0vmin,
+    &#39;vmax&#39;: 0vmax,
+    &#39;deg&#39;: 0deg,
+    &#39;turn&#39;: 0turn,
+    &#39;rad&#39;: 0rad,
+    &#39;grad&#39;: 0grad,
+    &#39;s&#39;: 0s,
+    &#39;ms&#39;: 0ms,
+    &#39;Hz&#39;: 0Hz,
+    &#39;kHz&#39;: 0kHz,
+    &#39;dppx&#39;: 0dppx,
+    &#39;dpcm&#39;: 0dpcm,
+    &#39;dpi&#39;: 0dpi,
+  );
+
+  @if map-has-key($units, $unit) {
+    @return map-get($units, $unit) + $value;
+  }
+
+  @error &quot;Unknown unit `#{$unit}`.&quot;;
+ }" data-collapsed="@function convert-unit($value, $unit) { ... }"><code>@function convert-unit($value, $unit) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert one unit into another</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>Initial value</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$unit</code></th><td data-label="desc"><p>Desired unit</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Unknown unit <code>#{$unit}</code>.</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-function-opposite-direction"><h3 class="item__heading"><a class="item__name" href="#function-opposite-direction">opposite-direction</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function opposite-direction($directions) { 
+  $opposite-directions: ();
+  $direction-map: (
+    top:    bottom,
+    right:  left,
+    bottom: top,
+    left:   right,
+    center: center,
+    ltr:    rtl,
+    rtl:    ltr
+  );
+ 
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+    
+    @if map-has-key($direction-map, $direction) { 
+      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    } @else {
+      @warn &quot;No opposite direction can be found for `#{$direction}`. Direction omitted.&quot;;
+    }
+  }
+  @return $opposite-directions;
+ }" data-collapsed="@function opposite-direction($directions) { ... }"><code>@function opposite-direction($directions) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Returns the opposite direction of each direction in a list. eg. opposite-direction(top) will return bottom;</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$directions</code></th><td data-label="desc"><p>List of initial directions</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>List of opposite directions</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#colour, shape &amp; effects-mixin-triangle"><code>triangle</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-pos"><h3 class="item__heading"><a class="item__name" href="#mixin-pos">pos</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pos($xCoord: description, $yCoord: description) { 
+
+  @if $xCoord == null {
+    top:$yCoord;
+    transform: translateY(-$yCoord);
+  } @else if $yCoord == null {
+    left:$xCoord;
+    transform: translateX(-$xCoord);
+  }@else if $xCoord and $yCoord {
+    top:$yCoord;
+    left:$xCoord;
+    transform: translateX(-$xCoord) translateY(-$yCoord);
+  }
+
+ }" data-collapsed="@mixin pos($xCoord: description, $yCoord: description) { ... }"><code>@mixin pos($xCoord: description, $yCoord: description) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A utility mixin to position the element and center it&#39;s datum reference point.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$xCoord</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>[type]</code></td><td data-label="default"><code>description</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$yCoord</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>[type]</code></td><td data-label="default"><code>description</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-pos-center"><h3 class="item__heading"><a class="item__name" href="#mixin-pos-center">pos-center</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pos-center() { 
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+ }" data-collapsed="@mixin pos-center() { ... }"><code>@mixin pos-center() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Positions an element in the center of its controlling parent. These items must also have display:absolute.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-pos-v-center"><h3 class="item__heading"><a class="item__name" href="#mixin-pos-v-center">pos-v-center</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pos-v-center() { 
+  top:50%;
+  transform: translateY(-50%);
+ }" data-collapsed="@mixin pos-v-center() { ... }"><code>@mixin pos-v-center() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Positions an element vertically center of its controlling parent. These items must also have display:absolute</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#css icons-mixin-i-menu"><code>i-menu</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-pos-h-center"><h3 class="item__heading"><a class="item__name" href="#mixin-pos-h-center">pos-h-center</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pos-h-center() { 
+  left:50%;
+  transform: translateX(-50%);
+ }" data-collapsed="@mixin pos-h-center() { ... }"><code>@mixin pos-h-center() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Positions an element horizontally center of its controlling parent. These items must also have display:absolute</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-remove-list-style"><h3 class="item__heading"><a class="item__name" href="#mixin-remove-list-style">remove-list-style</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin remove-list-style() { 
+  margin:0; 
+  padding:0;
+  li {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+  } 
+ }" data-collapsed="@mixin remove-list-style() { ... }"><code>@mixin remove-list-style() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Remove all styling for lists and their items.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-menu-list"><code>menu-list</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-menu-list"><code>menu-list</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-menu-list"><h3 class="item__heading"><a class="item__name" href="#mixin-menu-list">menu-list</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin menu-list($inlineOrBlock) { 
+  @include remove-list-style();
+  // INLINE LISTS
+  @if ($inlineOrBlock == inline) { 
+    line-height:1;
+    li {display:inline-block;}
+  }
+  // BLOCK LISTS
+  @if ($inlineOrBlock != inline) {
+    //child lists 
+    &amp; ul {
+      @include remove-list-style();
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    width:100%;
+  }
+ }" data-collapsed="@mixin menu-list($inlineOrBlock) { ... }"><code>@mixin menu-list($inlineOrBlock) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Base styles for an inline or block menu list</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$inlineOrBlock</code></th><td data-label="desc"><p>Inline menus render horizontally. Block menus render vertically.</p></td><td data-label="type"><code>[type]</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-remove-list-style"><code>remove-list-style</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-remove-list-style"><code>remove-list-style</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-truncate"><h3 class="item__heading"><a class="item__name" href="#mixin-truncate">truncate</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin truncate($truncation-boundary) { 
+  max-height:$truncation-boundary;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+ }" data-collapsed="@mixin truncate($truncation-boundary) { ... }"><code>@mixin truncate($truncation-boundary) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Truncate text at the given width and add an ellipsis to the end.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$truncation-boundary</code></th><td data-label="desc"><p>The height of the truncation boundary.</p></td><td data-label="type"><code>Px</code> or <code>%</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section><section class="main__item container item" id="undefined-mixin-accessible-hide"><h3 class="item__heading"><a class="item__name" href="#mixin-accessible-hide">accessible-hide</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin accessible-hide() { 
+    border: 0 none;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0;
+ }" data-collapsed="@mixin accessible-hide() { ... }"><code>@mixin accessible-hide() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hides an item with accessible techniques.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Hargreaves</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Ish-sass</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

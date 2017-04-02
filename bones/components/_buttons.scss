@@ -1,0 +1,11 @@
+.c-button {
+	// STYLE VARIATIONS
+    // OUTLINED BUTTON
+    &--outline {
+        border-width: 1px;
+        @include button($outline-button);
+        &.c-button--white {
+            @include button($outline-button--white);
+        }
+    }
+}

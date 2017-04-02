@@ -1,0 +1,196 @@
+/*------------------------------------*\
+	TABLES
+\*------------------------------------*/
+
+table {}
+thead {
+	text-align: left;
+	font-weight:400;
+}
+
+/*------------------------------------*\
+	LAYOUT ELEMENTS
+\*------------------------------------*/
+%l-corset {
+	margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint($mobile-start){
+       max-width: $mobile-start;
+    }
+    @include breakpoint($tablet-start){
+       max-width: $tablet-start;
+    }
+    @include breakpoint($desktop-start){
+       max-width: $desktop-start;
+    }
+    @include breakpoint($desktop-wide-start){
+       max-width: $desktop-wide-start;
+    }
+    @include breakpoint($desktop-high-res-start){
+       max-width: $desktop-high-res-start;
+    }
+}
+
+%l-block__inner {
+	@include responsive-gutters();
+}
+
+.l-block {
+	&__inner {
+		@extend %l-block__inner;
+	}
+}
+
+.l-corset {
+	@extend %l-corset;
+	
+	&-block {
+		@extend %l-corset;
+
+		&__inner {
+			@extend %l-block__inner;
+		}
+	}
+}
+
+/*------------------------------------*\
+	CSS TABLES
+\*------------------------------------*/
+.l-table {
+    display: table;
+    border-collapse: separate;
+    margin: $spacing-delta 0;
+}
+.l-tr {
+    display: table-row
+}
+.l-td {
+    display: table-cell;
+}
+ 
+/*------------------------------------*\
+	GRID
+\*------------------------------------*/
+.l-grid {
+	@include clear-fix;
+	list-style:none;
+	margin:0;
+	padding:0;
+	// EVEN COLUMN WIDTHS
+	// TODO: IS THIS NEEDED???
+	 &__column{
+		clear: none;
+	    display:inline-block;
+	    float: left; // TODO: make this variable
+	    margin-left: 0;
+	    margin-right: $base-grid-gutter;
+    	vertical-align: top;
+
+	 	&:last-child {
+			margin-right:0;
+		}
+	}
+	&--2-col {
+		.l-grid__column {
+			@include grid-column(1/2, $base-grid-gutter ,2);
+		} 
+	}
+	&--3-col {
+		.l-grid__column {
+			@include grid-column(1/3, $base-grid-gutter ,3);
+		} 
+	}	
+	&--4-col {
+		.l-grid__column {
+			@include grid-column(1/4, $base-grid-gutter ,4);
+		} 
+	}
+	&--gutterless {
+		 .l-grid__column {
+			margin-right:0;
+		}  
+	}
+	&--padded {
+		 .l-grid__column {
+			padding: $base-grid-gutter / 2;
+		}
+	}	
+}
+
+.l-one-sixteenth {
+	@include grid-column(1/16); 
+}
+
+.l-one-eighth {
+	@include grid-column(1/8); 
+
+}
+.l-one-sixth {
+	@include grid-column(1/6); // 16.6666%
+}
+
+.l-one-fifth {
+	@include grid-column(1/5); // 25%
+}
+
+.l-one-quarter, .l-two-eighths {
+	@include grid-column(1/4); // 25%
+}
+.l-three-eighths {
+	@include grid-column(3/8); 
+}
+.l-one-third,.l-two-sixths {
+	@include grid-column(1/3); // 33.3333%
+}
+.l-two-fifths {
+	@include grid-column(2/5); // 40%
+}
+.l-one-halve,.l-one-half, .l-three-sixths, .l-four-eighths {
+	@include grid-column(1/2); // 50%
+}
+.l-three-fifths {
+	@include grid-column(3/5); // 60%
+}
+.l-five-eighths {
+	@include grid-column(5/8);
+}
+.l-two-thirds, .l-four-sixths {
+	@include grid-column(2/3); // 66.6666%
+}
+.l-three-quarters, .l-six-eighths {
+	@include grid-column(3/4); // 75%
+}
+.l-four-fifths {
+	@include grid-column(4/5); // 80&
+}	
+.l-five-sixths {
+	@include grid-column(5/6); // 83.3333%
+	//width: 83.3333% - $base-grid-gutter-half;
+}	
+.l-seven-eighths {
+	@include grid-column(7/8);
+}
+// Sevenths
+.l-one-seventh {
+	@include grid-column(1/7); // 16.6666%
+}
+.l-two-sevenths {
+	@include grid-column(2/7); // 16.6666%
+}
+.l-three-sevenths {
+	@include grid-column(3/7); // 16.6666%
+}
+.l-four-sevenths {
+	@include grid-column(4/7); // 16.6666%
+}
+.l-five-sevenths {
+	@include grid-column(5/7); // 16.6666%
+}
+.l-six-sevenths {
+	@include grid-column(5/7); // 16.6666%
+}
+
+.l-one-whole {
+	width: 100%;
+}

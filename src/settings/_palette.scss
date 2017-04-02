@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    COLOR PALETTE & RANKING
+\*------------------------------------*/
+
+$color-palette: (
+  base: (
+    white: #ffffff,
+    black: #1E1E14,
+    grey: #636363,
+    grey-light:#cecece,
+    truthy: #94e73a,
+    falsey: #E41A2A,
+    warn: #FDC03D,
+    info: #9DC7EA,
+    alpha: #246aa3, // blue
+    beta: #E16636, // orange
+    gamma: #9DC7EA, //#57D1C2, // light blue
+    delta: #23282d, // dark blue
+    epsilon: #FFF57B, // yellow
+    zeta: #ff00ff //lightest grey
+  )
+); 
+

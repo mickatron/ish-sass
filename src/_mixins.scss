@@ -1,0 +1,343 @@
+////
+/// @author Michael Hargreaves
+////
+
+
+
+/*------------------------------------*\
+  Responsive $responsive-settings Utils
+
+  RESPONSIVE GUTTER MIXIN
+\*------------------------------------*/
+
+/// Creates responsively styled gutters according to the 
+/// @param  {Map Value} $type:gutter   Defaults to 'gutter' property. This property is found on the $map parmameter and may be any other valid property on that map which requires responsive gutters.
+/// @param  {Map} $map:$responsive-settings A map of site settings.
+/// @group Responsive
+@mixin responsive-gutters($type:gutter, $map:$responsive-settings, $list:(false,true,false,true)) {
+  @each $key, $value in $map {
+    $bp-value: map-get(map-get($map, $key), breakpoint);
+  	$gutterValue :map-get(map-get($map, $key), $type);
+
+    @include breakpoint($bp-value) {
+      @if nth($list, 1 ) { margin-top: $gutterValue; }
+      @if nth($list, 2 ) { margin-right: $gutterValue; }
+      @if nth($list, 3 ) { margin-bottom: $gutterValue; }
+      @if nth($list, 4 ) { margin-left: $gutterValue;}
+    }
+  }
+}
+
+/*------------------------------------*\
+  RESPONSIVE FONT-SIZE MIXIN
+\*------------------------------------*/
+
+/// Sets the font size accoring to the modular scale settings and responsive settings of the site.
+/// @param  {[type]} $size                [description]
+/// @param  {[type]} $map:$responsive-settings A map of site settings.
+/// @group Responsive
+@mixin font-size($size, $map:$responsive-settings ) {
+  $scaleValue: index($scale-labels, $size)-$base-scale-index;
+  //$base-size:'';
+  @each $key, $value in $map {
+    $bp-value: map-get($value, breakpoint);
+    /*$this-base-size : map-get($value, base-size);
+    @if $this-base-size {
+      $base-size: $this-base-size;
+    }*/
+    @include breakpoint($bp-value) {
+      //@debug $scaleValue;
+      $size: rem-rhythm( $scaleValue, $key, $map);
+      @if $size != '' {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  GRIDS MIXIN
+\*------------------------------------*/
+/// @group Grid
+$base-grid-gutter: 3%;
+
+/// Calculates style attributes for a grid column.
+/// @group Grid
+/// @param  {fraction} $width                    The width of the column in fraction format
+/// @param  {percentage} $gutter:$base-grid-gutter Columns gutter size
+/// @param  {integer} $cycle:0                  Break the row after n columns
+@mixin grid-column($width, $gutter:$base-grid-gutter, $cycle:0) {
+  $colWidth: (100% * $width);
+  $numOfCols: 100% / $colWidth;
+  $gutterWidth:  ($gutter * ($numOfCols - 1)) / $numOfCols;
+
+  @if $cycle != 0 {
+    &:nth-child(#{$cycle}n){
+      margin-right:0;
+    }
+    &:nth-child(#{$cycle}n+1){
+      margin-left:0;
+    }
+  }
+  width: $colWidth - $gutterWidth;
+}
+
+
+/*------------------------------------*\
+  Shapes
+\*------------------------------------*/
+
+/// Triangle helper mixin
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color 
+/// @param {Length} $size [1em] - Triangle size
+/// @group Colour, Shape &amp; Effects
+@mixin triangle($direction, $color: currentcolor, $width: 1rem, $height: 1rem) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  border-#{opposite-direction($direction)}: ($width * 1.5) solid $color;
+  
+  $perpendicular-borders: $height solid transparent;
+  
+  @if $direction == top or $direction == bottom {
+    border-left:   $perpendicular-borders;
+    border-right:  $perpendicular-borders;
+  } @else if $direction == right or $direction == left {
+    border-bottom: $perpendicular-borders;
+    border-top:    $perpendicular-borders;
+  }
+}
+
+
+/*------------------------------------*\
+  Gradients
+\*------------------------------------*/
+
+/// Creates a linear gradient.
+/// @param  {integer} $direction The direction of the gradient in degrees.
+/// @param  {rgb|rgba|hex...} $colors... A series of colors to render along the gradient.
+/// @group Colour, Shape &amp; Effects
+@mixin linear-gradient(
+  $direction, 
+  $colors...){
+  
+    $w3c: '';
+
+    @if type-of($direction) == number and $direction < 0 {
+      $w3c: 180 + $direction;
+    } @else {
+      $w3c: $direction;
+    }
+
+    @if type-of($direction) != number {
+      $direction: _fix-direction($direction);
+    }
+
+    background-image:  -webkit-linear-gradient($direction, $colors);
+    background-image:          linear-gradient($w3c, $colors);
+}
+
+/// Creates a radial gradient.
+/// @param  {integer} $sizeShapePos The direction of the gradient in degrees.
+/// @param  {rgb|rgba|hex...} $colors... A series of colors to render along the gradient.
+/// @group Colour, Shape &amp; Effects
+@mixin radial-gradient(
+  $sizeShapePos,
+  $colors...) {
+    
+    $posSizeShape: ();
+    $atIndex: false;
+    
+    // reordering for older browsers
+    @if length($sizeShapePos) > 1 {
+      $atIndex: index($sizeShapePos, 'at');
+      @if $atIndex == null {
+        $atIndex: false;
+      }
+    }   
+    @if $atIndex != false {
+      @for $i from ($atIndex + 1) through length($sizeShapePos) {
+        $posSizeShape: append($posSizeShape, nth($sizeShapePos, $i));
+      }
+      $posSizeShape: append($posSizeShape, unquote(','));
+      @for $i from 1 through ($atIndex - 1) {
+        $posSizeShape: append($posSizeShape, nth($sizeShapePos, $i));
+      }
+    } @else {
+      $posSizeShape: append($posSizeShape, $sizeShapePos);
+    }
+
+    background-image:  -webkit-radial-gradient($posSizeShape, $colors);
+    background-image:          radial-gradient($sizeShapePos, $colors);
+}
+
+/*------------------------------------*\
+  Animation
+\*------------------------------------*/
+
+/// A default transition style including hover and active psuedo elements. 
+/// @param  {[type]} $duration The length of the animation on hover, on blur the transition runs half of the given duration.
+/// @group Colour, Shape &amp; Effects
+@mixin transition($duration) {
+  transition:($duration / 2) ease-out;
+
+  &:hover {
+    transition:$duration ease-in;
+  }
+
+  &:active {
+    transition-duration:0ms;
+  }
+}
+
+/*------------------------------------*\
+  positioning
+\*------------------------------------*/
+
+// TODO make all of these the one mixin
+// 
+
+/// A utility mixin to position the element and center it's datum reference point.
+/// @param  {[type]} $xCoord [description]
+/// @param  {[type]} $yCoord [description]
+@mixin pos($xCoord, $yCoord) {
+
+  @if $xCoord == null {
+    top:$yCoord;
+    transform: translateY(-$yCoord);
+  } @else if $yCoord == null {
+    left:$xCoord;
+    transform: translateX(-$xCoord);
+  }@else if $xCoord and $yCoord {
+    top:$yCoord;
+    left:$xCoord;
+    transform: translateX(-$xCoord) translateY(-$yCoord);
+  }
+
+}
+/// Positions an element in the center of its controlling parent. These items must also have display:absolute.
+@mixin pos-center() {
+  left:50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+/// Positions an element vertically center of its controlling parent. These items must also have display:absolute
+@mixin pos-v-center() {
+  top:50%;
+  transform: translateY(-50%);
+}
+/// Positions an element horizontally center of its controlling parent. These items must also have display:absolute
+@mixin pos-h-center() {
+  left:50%;
+  transform: translateX(-50%);
+}
+
+/*------------------------------------*\
+  Lists
+\*------------------------------------*/
+/// Remove all styling for lists and their items.
+@mixin remove-list-style(){
+  margin:0; 
+  padding:0;
+  li {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+  } 
+}
+
+/// Base styles for an inline or block menu list
+/// @param  {[type]} $inlineOrBlock Inline menus render horizontally. Block menus render vertically. 
+@mixin menu-list ($inlineOrBlock) {
+  @include remove-list-style();
+  // INLINE LISTS
+  @if ($inlineOrBlock == inline) { 
+    line-height:1;
+    li {display:inline-block;}
+  }
+  // BLOCK LISTS
+  @if ($inlineOrBlock != inline) {
+    //child lists 
+    & ul {
+      @include remove-list-style();
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    width:100%;
+  }
+}
+
+/*------------------------------------*\
+  Utils
+\*------------------------------------*/
+// Good ol' clear-fix to the rescue.
+@mixin clear-fix(){
+  &:after {
+    content:'';
+    display:block;
+    height:0;
+    width:0;
+    clear:both;
+  }
+}
+
+/// Truncate text at the given width and add an ellipsis to the end.
+/// @param  {px|%} $truncation-boundary The height of the truncation boundary.
+@mixin truncate($truncation-boundary){
+  max-height:$truncation-boundary;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/**
+ * Retina device targetting
+ */
+/// Target retina devices.
+/// @group Responsive
+@mixin retina{
+  @media print,
+     (-webkit-min-device-pixel-ratio:1.25),
+      (-o-min-device-pixel-ratio:5/4),
+     (min-resolution:120dpi){
+    @content;
+  }
+}
+/// Hides an item with accessible techniques.
+@mixin accessible-hide(){
+    border: 0 none;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0;
+}
+
+
+/*------------------------------------*\
+ MISC
+\*------------------------------------*/
+
+/// Creates a dotted background fill
+/// @group Colour, Shape &amp; Effects
+@mixin bg-dotted(){
+  // CSS dotted background
+    background-image:
+     linear-gradient(45deg, rgba(255,255,255,0.05) 5%, transparent 5%), 
+      linear-gradient(-45deg, rgba(255,255,255,0.05) 5%, transparent 5%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+    background-size:4px 4px;
+    background-position:100px 100px, 250px 0, 250px -250px, 0px 250px;
+}

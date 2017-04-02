@@ -1,0 +1,107 @@
+
+.f-label {
+	@include font-size(epsilon);
+	display:inline-block;
+	margin: $spacing-delta 0 $spacing-zeta;
+	width: 100%;
+}
+
+.f-radiogroup,
+.f-checkboxgroup {
+	input {
+	}
+	.f-label {
+	}
+}
+// CUSTOM CHECKS AND RADIOS
+.f-radio,
+.f-check {
+	@include clear-fix();
+
+	input[type="checkbox"], input[type="radio"] {
+	    opacity: 0;
+	    position: absolute;   
+	}
+
+	input[type="checkbox"], .f-label, input[type="radio"], .f-label {
+	    display: inline-block;
+	    vertical-align: middle;
+	    margin: 5px;
+	    cursor: pointer;
+	}
+
+	.f-label, .f-label {
+	    position: relative;
+	}
+
+	input[type="checkbox"] + .f-label:before, input[type="radio"] + .f-label:before {
+	    content: '';
+	    background: #fff;
+	    border: 1px solid getColor(base,grey, light, map-get($base, shade)*3);
+	    display: inline-block;
+	    vertical-align: middle;
+	    width: 20px;
+	    height: 20px;
+	    padding: 2px;
+	    margin-right: 10px;
+	    text-align: center;
+	}
+
+	input[type="checkbox"]:checked + .f-label:before {
+		@include font-size(epsilon);
+		content: "\2714";
+		color:  getColor(base,grey, light, map-get($base, shade));
+		line-height: 14px;
+	    background: getColor(base,grey-light,light, map-get($base, shade));
+	}
+
+	input[type="radio"] + .f-label:before {
+	    border-radius: 50%;
+	}
+
+	input[type="radio"]:checked + .f-label:before {
+	    background: #ccc;
+	    box-shadow: inset 0px 0px 0px 4px #fff;
+	}
+
+
+	input[type="checkbox"]:focus + .f-label, input[type="radio"]:focus + .f-label {
+	  outline: 1px solid #ddd; /* focus style */
+	}
+
+	.f-label {
+		width: calc(100% - 32px);
+		margin: 0 ;
+		display: inline;
+	}
+	&:before {}
+	&:after {}
+}
+
+// CUSTOM SELECTS
+.f-select {
+	display: inline-block;
+	box-sizing: border-box;
+	padding-right: 3rem;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image:
+	    linear-gradient(45deg, transparent 50%, gray 50%),
+	    linear-gradient(135deg, gray 50%, transparent 50%),
+	    linear-gradient(to right, #ccc, #ccc);
+	background-position:
+		calc(100% - 20px) calc(1em + 2px),
+		calc(100% - 15px) calc(1em + 2px),
+		calc(100% - 2.5em) 0.5em;
+	background-size:
+		5px 5px,
+		5px 5px,
+		1px 1.5em;
+	background-repeat: no-repeat;
+}
+
+// FORM Helpers
+.f-required {
+	color:getColor(falsey);
+}

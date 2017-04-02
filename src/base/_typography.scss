@@ -1,0 +1,112 @@
+
+/*------------------------------------*\
+ Responsive Base font-size and line-height.
+ Use on html element.
+	html {
+		@extend %base-html-font-size;
+	}
+\*------------------------------------*/
+
+$default-scale-size: index($scale-labels, delta) - 1;
+@if ($responsive-settings){
+
+	@each $key, $value in $responsive-settings {
+	  $base-size: map-get($value,base-size);
+	  $line-height: map-get($value, line-height);
+	  $bp-value: map-get($value, breakpoint);
+
+	  @include breakpoint($bp-value) {
+	    // include a base values for html element
+	    %base-html-font-size {
+	    	@if $base-size { 
+		     	font-size: $base-size;
+		    }
+	    	@if $line-height {  
+	    		line-height: $line-height;
+	  		}
+	    }
+	  }
+	}
+}
+
+/*------------------------------------*\
+  Typography
+\*------------------------------------*/
+html {
+	@extend %base-html-font-size;
+	color: map-get($base, type-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html, button {
+    font-family: map-get($base, font-family);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	&,
+	& a {
+		color: map-get($base, heading-color); //light
+		//font-weight: 300;
+	 }
+}
+
+h1, h2, h3, h4, h5, h6 {
+	//margin: $spacing-gamma 0 $spacing-delta;
+	&:hover {
+		cursor: default;
+	}
+}
+ p {
+	margin: $spacing-delta 0;
+	&:hover {
+		cursor: default;
+	}
+ }
+
+p, ul, ol {
+	//font-weight: 300;
+}
+ul, ol {
+    //padding: 0 $spacing-gamma;
+}
+
+ul {
+	//list-style-type: circle;
+	li {
+		// list style image
+		padding-bottom: rem-rhythm( -1, default, $spacing-scales );
+
+		&:last-child {
+			padding-bottom: 0 ;
+		} 
+	}
+}
+a {
+	color: map-get( $base, link-color);
+	text-decoration: none;
+	transition: all map-get($base, transition-time);
+	&:hover {
+		color: map-get( $base, link-color--hover); //light
+	}
+}
+
+strong, b {
+	font-weight: 700;
+}
+
+hr {
+	border: 1px solid getColor(grey); 
+	border-bottom: 0 ;
+	margin: $spacing-gamma 0 $spacing-gamma;
+}
+
+code {
+	background: getColor(grey, null, light, map-get($base, shade));
+	border-radius: map-get($base, border-radius);
+	display: inline-block;
+	padding: 0 $spacing-milli;
+	
+	a { text-decoration: none; }
+}
+

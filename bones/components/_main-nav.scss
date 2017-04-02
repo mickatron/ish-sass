@@ -1,0 +1,61 @@
+.c-main-nav{
+	height:0;
+	overflow: hidden;
+	transition: height 300ms ease-out;
+
+    @include breakpoint($tablet-start){
+    	height: auto !important;
+    }
+	@include breakpoint($desktop-start){
+    	margin: 1rem 0;
+	}
+	
+	&__toggle{
+		//@include pos-v-center();
+			
+		background: none;
+		border:0;	
+		//border-left: 1px solid getColor(white, null, rgba, $base-trans);
+		display: inline-block;
+		position: absolute;
+		right: $spacing-delta;
+		top: $spacing-delta;
+		
+		@include breakpoint($mobile-start){
+			right: $spacing-gamma;
+		}
+		
+		@include breakpoint($tablet-start){
+	       display: none;
+	    }
+	}
+
+	&__inner {
+
+	}
+
+	&__close {
+		background:none;
+		border: 0;
+		text-align:center;
+		line-height: $c-menu-alpha-link-height; // TODO: refactor
+		//color: $header-h1-color;
+		width: 100%;
+		
+		@include breakpoint($tablet-start){
+			display:none;
+		}
+
+	}
+
+	a {				
+		@include font-size(epsilon);
+		text-align: center;
+	}
+	
+	.active {
+		@include clear-fix();
+		
+		background: getColor(black,null,rgba,$base-trans);
+	}
+}

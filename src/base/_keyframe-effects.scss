@@ -1,0 +1,45 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes scaledFadeIn {
+    from { 
+        transform: scale(.25, .25);
+        opacity: 0; }
+    to   { 
+        transform: scale(1, 1);
+        opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-$spacing-beta); }
+    to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY($spacing-beta); }
+    to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX($spacing-zeta); }
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(-$spacing-zeta); }
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeInFlipX {
+    from { opacity: 0; transform: rotateX(90deg); }
+    to   { opacity: 1; transform: rotateX(0);}
+}
+/*
+@keyframes fadeInShake {
+    0% { opacity: 0; transform: translateX(0); }
+    33% {opacity: 0.33; transform: translateX($spacing-epsilon); }
+    75% {opacity: 0.75; transform: translateX($spacing-delta); }
+    100%   { opacity: 1; transform: rotateX(0);}
+}*/

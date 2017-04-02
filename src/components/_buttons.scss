@@ -1,0 +1,130 @@
+
+@mixin button ($buttonMap) {
+    background: map-get($buttonMap, background);
+    border: map-get($buttonMap, border);
+    border-width: map-get($buttonMap, border-width);
+    color:  map-get($buttonMap, color);
+    
+    $hoverMap: map-get($buttonMap, hover) ;
+    &:hover {
+        background: map-get($hoverMap, background);
+        border: map-get($hoverMap, border);
+        border-width: map-get($hoverMap, border-width);
+        color:  map-get($hoverMap, color);
+    }
+    $activeMap: map-get($buttonMap, active) ;
+    &:active {
+        background: map-get($activeMap, background);
+        border: map-get($activeMap, border);
+        border-width: map-get($activeMap, border-width);
+        color:  map-get($activeMap, color);
+    }
+}
+
+.c-button {
+    @include font-size(epsilon); 
+    @include button($base-button);
+    @include transition( map-get($base, transition-time));
+    border-radius: $base-button-radius;
+    cursor: pointer;
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0 $spacing-delta;
+    position: relative;
+    line-height: 3; // ????
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+    svg {
+        display: inline-block;
+        fill: getColor(white);
+        width: 1rem;
+        height: 100%;
+        position: relative;
+        transform: translateY(25%);
+    }
+    &--icon {
+        padding-left: $spacing-gamma;
+        &-right {
+            padding-left: $spacing-delta;
+            padding-right: $spacing-gamma;
+        }
+        svg {
+            position: absolute;
+            left: $spacing-epsilon;
+        }
+    }
+    &--pill {
+        border-radius: 100px;
+    }
+    &--full {
+        width: 100%;
+    }
+    // SIZES
+    &--zeta {
+        @include font-size(zeta);
+    }
+    &--epsilon {
+        @include font-size(epsilon);
+    }
+    &--gamma {
+        @include font-size(gamma);
+    }
+    &--delta {
+        @include font-size(delta);
+    }
+    &--beta {
+        @include font-size(beta);
+    }
+    &--alpha {
+        @include font-size(alpha);
+    }
+    // DISABLED
+    &.disabled,
+    &[disabled],
+    &[disabled="disabled"] {
+        @include button($disabled-button);
+        cursor: pointer;
+
+    }
+
+    // TRUTHY/CORRECT
+    &--truthy {
+        @include button($truthy-button);
+    }
+    // WARN
+    &--warn {
+        @include button($warn-button);
+    }
+    // FLASEY/INCORRECT
+    &--falsey {
+        @include button($falsey-button);
+    }
+}
+
+.c-button-bar {
+    @include menu-list(inline);
+    .c-button {
+        width:100%;
+    }
+    input {
+        @include accessible-hide;
+    }
+
+    li {
+        border-right: 1px solid getColor(alpha, null, dark, map-get($base, shade));
+        &:first-child {
+            
+        }
+        &:last-child {
+            border-right: none;
+        }
+         input+label {
+            background: getColor(grey,null,light, map-get($base, shade) *3);
+            margin:0;
+        }
+        input:checked+label{ 
+            background: getColor(truthy); 
+        }
+    }
+}

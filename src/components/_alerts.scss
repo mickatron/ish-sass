@@ -1,0 +1,58 @@
+.c-alert {
+	border-left: 3px solid getColor(grey);
+	width:100%;
+	position:relative;
+	margin: $spacing-delta 0;
+	&__inner {
+		padding: $spacing-delta;
+		p,a {
+			@include font-size(epsilon);
+		}
+		*:first-child {
+			margin-top:0;
+		}
+		*:last-child {
+			margin-bottom:0;
+		}
+	}
+	
+	// MODIFIERS
+	&--icon {
+		border-left-width: $spacing-gamma;
+
+		.i-icon {
+			@include pos-v-center;
+			left: -1.65rem;
+			position: absolute;
+			color: getColor(white);
+			border-color: getColor(white);
+		}
+	}
+
+	&--warn {
+		border-left-color: getColor(warn);
+		h1,h2,h3,h4,h5,h6 {
+			color:getColor(warn);
+		}
+	}
+	&--info {
+		border-left-color: getColor(info);
+		h1,h2,h3,h4,h5,h6 {
+			color:getColor(info);
+		}
+	}
+
+	&--truthy {
+		border-left-color: getColor(truthy);
+		h1,h2,h3,h4,h5,h6 {
+			color:getColor(truthy);
+		}
+	}
+	&--falsey {
+		border-left-color: getColor(falsey);
+		h1,h2,h3,h4,h5,h6 {
+			color:getColor(falsey);
+		}
+	}
+ 	
+}

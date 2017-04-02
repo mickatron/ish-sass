@@ -1,0 +1,27 @@
+$_alpha-dark: getColor( alpha,null, dark, map-get($base, shade) );
+
+// OUTLINE BUTTON
+$outline-button : (
+	border: solid $_alpha-dark,
+	border-width: 1px 1px 3px 1px,
+	background: none,
+	color:  $_alpha-dark,
+	hover: (
+		border: getColor(alpha),
+		border-width: 1px 1px 3px 1px,
+		color:  getColor(alpha)
+	),
+	active: (
+	)
+);
+// OUTLINE BUTTON--white
+$outline-button--white : (
+	border: solid getColor(white),
+	border-width: 1px 1px 3px 1px,
+	background: none,
+	color:  getColor(white),
+	hover: (
+	),
+	active: (
+	)
+);

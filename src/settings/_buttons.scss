@@ -1,0 +1,82 @@
+/*------------------------------------*\
+	Base Button Configuration
+\*------------------------------------*/
+$base-button-radius : 2px;
+
+// BASE BUTTON STYLES
+$_alpha-dark: getColor( alpha,null, dark, map-get($base, shade) );
+$base-button : (
+	border: solid $_alpha-dark,
+	border-width: 1px 1px 3px 1px,
+	background: getColor( alpha ),
+	color: getColor( white ),
+	hover: (
+		background: $_alpha-dark,
+	),
+	active: (
+		border: solid getColor( alpha ),
+		border-width: 1px 1px 3px 1px,
+		background: getColor( alpha ),
+	)
+);
+
+// DISABLED BUTTON STYLE
+$_disabled_bg_color: getColor( grey, null, light,  map-get($base, shade));
+$disabled-button : (
+	border: solid $_disabled_bg_color,
+	border-width: 1px 1px 3px 1px,
+	background: $_disabled_bg_color,
+	color: getColor( white ),
+	hover: (
+		background: $_disabled_bg_color,
+	),
+	active: (
+		background: $_disabled_bg_color,
+	)
+);
+
+// TRUTHY BUTTON STYLE
+$_truthy-dark: getColor( truthy,null, dark, map-get($base, shade) );
+$truthy-button : (
+	border: solid $_truthy-dark,
+	border-width: 1px 1px 3px 1px,
+	background: getColor( truthy ),
+	hover: (
+		background: $_truthy-dark,
+	),
+	active: (
+		border: solid getColor( truthy ),
+		border-width: 1px 1px 3px 1px,
+		background: getColor( truthy ),
+	)
+);
+// WARNING BUTTON STYLE
+$_warn-dark: getColor( warn,null, dark, map-get($base, shade) );
+$warn-button : (
+	border: solid $_warn-dark,
+	border-width: 1px 1px 3px 1px,
+	background: getColor( warn ),
+	hover: (
+		background: $_warn-dark,
+	),
+	active: (
+		border: solid getColor( warn ),
+		border-width: 1px 1px 3px 1px,
+		background: getColor( warn ),
+	)
+);
+// FALSE BUTTON STYLE
+$_falsey-dark: getColor( falsey,null, dark, map-get($base, shade) );
+$falsey-button : (
+	border: solid $_falsey-dark,
+	border-width: 1px 1px 3px 1px,
+	background: getColor( falsey ),
+	hover: (
+		background: $_falsey-dark,
+	),
+	active: (
+		border: solid getColor( falsey ),
+		border-width: 1px 1px 3px 1px,
+		background: getColor( falsey ),
+	)
+);

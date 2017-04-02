@@ -1,0 +1,10 @@
+.c-tile {
+	border: map-get($base, border-style);
+
+	&__inner
+	{
+		width:100%;
+		padding: $spacing-delta;
+	}
+	
+}

@@ -1,0 +1,15 @@
+
+.m-main {
+	@extend %l-corset;
+	
+	&__inner {
+		padding: $spacing-delta;
+		
+		& > *:first-child {
+			margin-top: 0;
+		}
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

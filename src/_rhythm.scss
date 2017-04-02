@@ -1,0 +1,80 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Rhythm
+/// @author Michael Hargreaves
+////
+/*------------------------------------*\
+	Type & Spacing Scale Settings
+\*------------------------------------*/
+///
+$scale-labels: (micro, milli, zeta, epsilon, delta, gamma, beta, alpha, kilo, mega, giga);
+///
+$base-scale-index: index($scale-labels, delta);
+
+/*------------------------------------*\
+	Scales
+\*------------------------------------*/
+/// Rythmic scale ratios.
+$scales : (
+	minorSecond: 1.067,
+	majorSecond: 1.125,
+	minorThird: 1.2,
+	majorThird: 1.25,
+	fourth: 1.333,
+	augmentedFourth: 1.414,
+	fifth: 1.5,
+	minorSixth: 1.6,
+	majorSixth: 1.667,
+	minorSeventh: 1.778,
+	golden: 1.618,
+	octave: 2, // exponential
+	majorTenth: 2.5,
+	majorEleventh: 2.667,
+	majorTwelfth: 3,
+	doubleOctave: 4
+);
+
+/*------------------------------------*\
+	RHYTHM
+\*------------------------------------*/
+// eg rem-rhythm(1, default, $scale-list)
+
+/// Calculates modular rythmic values and returns them as rem values
+/// @param  {[type]} $scale-value [description]
+/// @param  {[type]} $size-label  [description]
+/// @param  {[type]} $scale-list  [description]
+/// @return {rem}                      
+
+@function rem-rhythm($scale-value, $size-label, $scale-list, $base-size:16px, $pxOrRem:rem) {
+	$scale: map-get(map-get($scale-list, $size-label), ratio);
+	$fs:0;
+	// font-size calculation
+	@if $scale-value < 0 {
+		// low scale
+		$fs: ms-low-scale($scale, $scale-value, $base-size); 
+	}  
+	@else { 
+		// high scale 
+		$fs: ms-high-scale($scale, $scale-value, $base-size); 
+	}
+
+	@if $pxOrRem == px {
+		@return $fs;
+	} 
+	@else if  $pxOrRem == rem {
+		@return px-to-rem($fs, $base-size);
+
+	}
+}
+
+@function ms-low-scale ( $scale, $scale-value, $base-size){
+	@return $base-size / pow($scale, -$scale-value);
+}
+
+@function ms-high-scale( $scale, $scale-size, $base-size){
+	@return pow($scale, $scale-size) * $base-size;
+}
+
+
+

@@ -1,0 +1,47 @@
+/*------------------------------------*\
+	Spacing Scale Values
+\*------------------------------------*/
+
+$spacing-scales: (
+  default: (
+  	breakpoint: 0px,
+  	base-size: (map-get($base,font-size) * map-get($base,line-height) ), // the line-height in px units.
+	ratio: 2
+  ),
+ );
+@debug (map-get($base,font-size) * map-get($base,line-height) );
+/*------------------------------------*\
+    SPACING SCALES
+
+$_default-spacing-size : map-get(map-get($spacing-scales, default), base-size);
+
+$spacing-giga:    rem-rhythm( 6, default, $spacing-scales, $_default-spacing-size );
+$spacing-mega:    rem-rhythm( 5, default, $spacing-scales, $_default-spacing-size );
+$spacing-kilo:    rem-rhythm( 4, default, $spacing-scales, $_default-spacing-size );
+$spacing-alpha:   rem-rhythm( 3, default, $spacing-scales, $_default-spacing-size );
+$spacing-beta:    rem-rhythm( 2, default, $spacing-scales, $_default-spacing-size );
+$spacing-gamma:   rem-rhythm( 1, default, $spacing-scales, $_default-spacing-size );
+$spacing-delta:   rem-rhythm( 0, default, $spacing-scales, $_default-spacing-size );
+$spacing-epsilon: rem-rhythm( -1, default, $spacing-scales, $_default-spacing-size );
+$spacing-zeta:    rem-rhythm( -2, default, $spacing-scales, $_default-spacing-size );
+$spacing-milli:   rem-rhythm( -3, default, $spacing-scales, $_default-spacing-size );
+$spacing-micro:   rem-rhythm( -4, default, $spacing-scales, $_default-spacing-size );
+
+\*------------------------------------*/
+$_default-spacing-size : map-get(map-get($spacing-scales, default), base-size);
+$_base-font-size: map-get($base, font-size);
+
+$spacing-giga:    rem-rhythm( 6, default, $spacing-scales, $_default-spacing-size );
+$spacing-mega:    rem-rhythm( 5, default, $spacing-scales, $_default-spacing-size );
+$spacing-kilo:    rem-rhythm( 4, default, $spacing-scales, $_default-spacing-size );
+$spacing-alpha:   rem-rhythm( 3, default, $spacing-scales, $_default-spacing-size );
+$spacing-beta:    rem-rhythm( 2, default, $spacing-scales, $_default-spacing-size );
+$spacing-gamma:   rem-rhythm( 1, default, $spacing-scales, $_default-spacing-size );
+$spacing-delta:   px-to-rem($_default-spacing-size, $_base-font-size) ;
+$spacing-epsilon: rem-rhythm( -1, default, $spacing-scales, $_default-spacing-size );
+$spacing-zeta:    rem-rhythm( -2, default, $spacing-scales, $_default-spacing-size );
+$spacing-milli:   rem-rhythm( -3, default, $spacing-scales, $_default-spacing-size );
+$spacing-micro:   rem-rhythm( -4, default, $spacing-scales, $_default-spacing-size );
+
+@debug $spacing-delta;
+//$base-spacing-unit: $spacing-delta;

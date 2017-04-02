@@ -1,0 +1,24 @@
+
+$c-menu-alpha-link-height : 35px;
+$c-menu-alpha-border-style : 1px solid getColor( white, null, rgba, $base-trans / 2 );
+
+.c-menu {
+	@include menu-list(block);
+    border-top: $c-menu-alpha-border-style;
+
+	// Element: title - Change styling for headers
+	&__title {
+		@include font-size(epsilon);
+		padding:  $spacing-epsilon $spacing-delta ;
+		margin:0;
+	
+		// Modifier: alpha - main nav base
+		&--alpha {
+			@include font-size(epsilon);
+
+			border-bottom: $c-menu-alpha-border-style;
+			color: getColor(white, null, rgba, $base-trans); //trans
+			text-transform: uppercase;
+		}
+	}
+}

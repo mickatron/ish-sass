@@ -1,0 +1,167 @@
+/*------------------------------------*\
+	SASS Utilities
+\*------------------------------------*/
+
+/// Calculate the power of.
+/// @param {Number} $number - The base number value
+/// @param {Number} $exponent - The exponent value
+/// @return {Number} - Result of Snumber to the power of the $exponent
+@function pow($number, $exponent) {
+  $value: 1;
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+  @return $value;
+}
+
+/// Reverse a SASS list.
+/// @param {List} $list - The list to reverse
+/// @param {Boolean} $recursive - Recursively reverse child lists. Default false.
+/// @return {List} - A reversed list.
+@function reverseList($list, $recursive: false) {
+   $result: ();
+
+   @for $i from length($list)*-1 through -1 {
+      @if type-of(nth($list, abs($i))) == list and $recursive {
+        $result: append($result, reverseList(nth($list, abs($i)), $recursive));      
+      }
+      @else {
+        $result: append($result, nth($list, abs($i)));
+      }
+   }
+
+   @return $result;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+
+/*------------------------------------*\
+	CSS Utilities
+\*------------------------------------*/
+
+/// Convert a px unit to a rem unit
+/// @param {Number} $number - Value to convert
+/// @return {Number} - Unit in rem's
+@function px-to-rem($size, $base-size:16px) {
+	@return 0rem + $size / $base-size ;
+};
+
+/// Convert a rem unit to a px unit
+/// @param {Number} $number - Value to convert
+/// @return {Number} - Unit in px's
+@function rem-to-px($size, $base-size:16px) {
+  @return strip-unit($size) * $base-size;
+};
+
+
+/*------------------------------------*\
+  CSS Helpers 
+\*------------------------------------*/
+/// retrieve color from $color-palette map ie. `color(base, primary)`
+/// Reverse a SASS list.
+/// @param {List} $list - The list to reverse
+/// @param {Boolean} $recursive - Recursively reverse child lists. Default false.
+/// @return {List} - A reversed list.
+@function getColor($palette, $color:null, $modify:null, $modify-value:null) {
+
+  @if $color == null {
+    $color: $palette;
+    $palette : base;
+  }
+  $color-value: map-get(map-get($color-palette, $palette), $color);
+  //apply modifiers
+  @if $modify == rgba {
+    $color-value: rgba($color-value, $modify-value);
+  }
+  @if $modify == light {
+    $color-value: lighten($color-value, $modify-value);
+  }
+  @if $modify == dark {
+    $color-value: darken($color-value, $modify-value);
+  } 
+
+  @return $color-value;
+};
+
+/// Convert one unit into another
+/// @author Hugo Giraudel
+/// @param {Number} $value - Initial value
+/// @param {String} $unit - Desired unit
+/// @return {Number}
+/// @throw Error if `$unit` does not exist or if units are incompatible.
+@function convert-unit($value, $unit) {
+  $units: (
+    'px': 0px,
+    'cm': 0cm,
+    'mm': 0mm,
+    '%': 0%,
+    'ch': 0ch,
+    'in': 0in,
+    'em': 0em,
+    'rem': 0rem,
+    'pt': 0pt,
+    'pc': 0pc,
+    'ex': 0ex,
+    'vw': 0vw,
+    'vh': 0vh,
+    'vmin': 0vmin,
+    'vmax': 0vmax,
+    'deg': 0deg,
+    'turn': 0turn,
+    'rad': 0rad,
+    'grad': 0grad,
+    's': 0s,
+    'ms': 0ms,
+    'Hz': 0Hz,
+    'kHz': 0kHz,
+    'dppx': 0dppx,
+    'dpcm': 0dpcm,
+    'dpi': 0dpi,
+  );
+
+  @if map-has-key($units, $unit) {
+    @return map-get($units, $unit) + $value;
+  }
+
+  @error "Unknown unit `#{$unit}`.";
+}
+
+/// Returns the opposite direction of each direction in a list. eg. opposite-direction(top) will return bottom; 
+/// @author Hugo Giraudel
+/// @param {List} $directions - List of initial directions
+/// @return {List} - List of opposite directions
+@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+    top:    bottom,
+    right:  left,
+    bottom: top,
+    left:   right,
+    center: center,
+    ltr:    rtl,
+    rtl:    ltr
+  );
+ 
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+    
+    @if map-has-key($direction-map, $direction) { 
+      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    } @else {
+      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+    }
+  }
+  @return $opposite-directions;
+}

@@ -1,0 +1,34 @@
+html {
+	 box-sizing: border-box;
+}
+html, body {
+	padding:0;
+	margin:0;
+	width:100%;
+	background-color: map-get( $base, background-color );
+}
+
+body {
+	box-sizing: border-box;
+	//overflow: hidden;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+
+
+button {
+	cursor: pointer;
+}
+
+svg {
+	display: block;
+}
+
+main {
+	display:block;
+}
