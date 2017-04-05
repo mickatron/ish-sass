@@ -53,7 +53,7 @@ runSequence(
 });
 
 gulp.task('bump-version', function () {
-	var type = gulpUtil.env.type || "patch";
+	var type = gutil.env.type || "patch";
 	console.log('Release patch type: ', type);
 // We hardcode the version change type to 'patch' but it may be a good idea to
 // use minimist (https://www.npmjs.com/package/minimist) to determine with a
