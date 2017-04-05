@@ -1,6 +1,6 @@
 {
   "name": "ish-sass",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "ish.scss",
   "scripts": {
@@ -12,6 +12,10 @@
     "breakpoint-sass": "^2.7.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-bump": "^2.7.0",
+    "gulp-git": "^2.1.0",
+    "gulp-util": "^3.0.8",
+    "run-sequence": "^1.2.2",
     "sassdoc": "^2.2.2"
   }
 }
