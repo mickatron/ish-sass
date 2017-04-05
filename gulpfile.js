@@ -5,6 +5,7 @@ const bump 			= require('gulp-bump');
 const gutil 		= require('gulp-util');
 const git 			= require('gulp-git');
 const runSequence 	= require('run-sequence');
+const fs 			= require('fs');
 
 const _docFolder = './docs';
 const _srcFiles = './src/**/*.scss';
