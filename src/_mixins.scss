@@ -33,7 +33,7 @@
 \*------------------------------------*/
 
 /// Sets the font size accoring to the modular scale settings and responsive settings of the site.
-/// @param  {[type]} $size                [description]
+/// @param  {[type]} $size                The scale step increment. 
 /// @param  {[type]} $map:$responsive-settings A map of site settings.
 /// @group Responsive
 @mixin font-size($size, $map:$responsive-settings ) {

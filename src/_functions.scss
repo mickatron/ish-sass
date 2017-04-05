@@ -70,10 +70,12 @@
   CSS Helpers 
 \*------------------------------------*/
 /// retrieve color from $color-palette map ie. `color(base, primary)`
-/// Reverse a SASS list.
-/// @param {List} $list - The list to reverse
-/// @param {Boolean} $recursive - Recursively reverse child lists. Default false.
-/// @return {List} - A reversed list.
+/// @group Colour, Shape &amp; Effects
+/// @param  {map} $palette              The palette map you wish to query for a colour.
+/// @param  {String} $color:null        The name of the colour in the palette map. 
+/// @param  {String} $modify:null       The type of modification you wish to apply to the colour. possible values are: rgba, light or dark
+/// @param  {percentage|Number} $modify-value:null The amount of modification you wish to apply to the colour. The data type will depend on the modification you're performing.
+/// @return {hex|rgba}                   The colour value requested.
 @function getColor($palette, $color:null, $modify:null, $modify-value:null) {
 
   @if $color == null {
