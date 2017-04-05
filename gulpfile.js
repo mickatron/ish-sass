@@ -34,7 +34,7 @@ gulp.task('default', ['clean'], function() {
 });
 
 // $ gulp release --type (major || minor || patch)
-gulp.task('release', function() {
+gulp.task('release', function(callback) {
 runSequence(
     //'merge-changes',
 	//'default',
